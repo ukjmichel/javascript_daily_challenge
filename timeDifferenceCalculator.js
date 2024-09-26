@@ -1,13 +1,12 @@
-/*Challenge : Calculatrice de Dates Personnalisée*/
+// Challenge : Calculatrice de Dates Personnalisée*/
 
-/*
-    Crée une fonction JavaScript qui accepte deux dates en entrée (format "YYYY-MM-DD") et renvoie :
+// Crée une fonction JavaScript qui accepte deux dates en entrée (format "YYYY-MM-DD") et renvoie :
 
-        Le nombre total de jours entre ces deux dates.
-        Le nombre de mois et jours séparés entre ces deux dates.
-        La différence en années, mois, et jours si les dates sont très éloignées.
+//   Le nombre total de jours entre ces deux dates.
+//   Le nombre de mois et jours séparés entre ces deux dates.
+//   La différence en années, mois, et jours si les dates sont très éloignées.
         
-*/
+
 
 const date1 = '2023-01-01';
 const date2 = '2024-09-24';

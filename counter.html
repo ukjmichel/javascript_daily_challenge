@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>clic counter</title>
+  </head>
+  <body>
+    <div>
+      <h1 id="count">count: 0</h1>
+      <button id="click-btn">click me</button>
+      <button id="reset-btn">reset</button>
+
+      <script>
+        let count = 0;
+        const counterDisplay = document.getElementById('count');
+        const clickBtn = document.getElementById('click-btn');
+        const resetBtn = document.getElementById('reset-btn');
+
+        clickBtn.addEventListener('click', () => {
+          count++;
+          counterDisplay.textContent = `counter: ${count}`;
+        });
+        resetBtn.addEventListener('click', () => {
+          count = 0;
+          counterDisplay.textContent = `counter: ${count}`;
+        });
+      </script>
+    </div>
+  </body>
+</html>

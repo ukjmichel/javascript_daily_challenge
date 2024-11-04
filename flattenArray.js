@@ -18,7 +18,7 @@ const flattenArray = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     if (Array.isArray(arr[i])) {
       // Flatten the nested array and spread it back into the original array
-      arr.splice(i, 1, ...flattenArray(arr[i]));
+      arr.splice(i, 1, ...flattenArray(arr[i])); //arr.splice(startIndex, deleteCount, item1, item2, ..., itemN)
       i--; // Decrement i to check the newly flattened elements
     }
   }
@@ -29,7 +29,6 @@ const flattenArray = (arr) => {
 console.log(flattenArray([1, [2, 3], [4, [5, 6]], 7])); // Output: [1, 2, 3, 4, 5, 6, 7]
 console.log(flattenArray([1, [2, [3, [4]]]])); // Output: [1, 2, 3, 4]
 
-
 // Components of the Line:
 // arr.splice(i, 1, ...):
 
@@ -37,7 +36,7 @@ console.log(flattenArray([1, [2, [3, [4]]]])); // Output: [1, 2, 3, 4]
 // Parameters:
 // The first parameter (i) specifies the index at which to start changing the array.
 // The second parameter (1) indicates the number of elements to remove starting from the index i.
-// The third parameter (in this case, ...flattenArray(arr[i])) specifies the elements to add to the array starting from index i. 
+// The third parameter (in this case, ...flattenArray(arr[i])) specifies the elements to add to the array starting from index i.
 // The ... (spread operator) allows you to expand an array into individual elements.
 // flattenArray(arr[i]):
 

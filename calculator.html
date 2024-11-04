@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <style>
+      /* You can place your CSS styles here if needed */
+    </style>
+  </head>
+  <body
+    style="
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <div id="calculator">
+      <div
+        id="display"
+        style="
+          border: 1px solid black;
+          border-radius: 5px;
+          height: 100px;
+          margin-bottom: 10px;
+          font-size: 42px;
+          padding-right: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: right;
+          overflow-x: auto;
+        "
+      ></div>
+      <div
+        id="buttons"
+        style="
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          height: 400px;
+          width: 400px;
+        "
+      ></div>
+    </div>
+    <script>
+      const calculator = document.getElementById('calculator');
+      const display = document.getElementById('display');
+      const buttons = document.getElementById('buttons');
+
+      // Array of button values
+      const buttonValues = [
+        '7',
+        '8',
+        '9',
+        '+',
+        '4',
+        '5',
+        '6',
+        '-',
+        '1',
+        '2',
+        '3',
+        '*',
+        '0',
+        '.',
+        '=',
+        '/',
+        'C', // Added clear button
+      ];
+
+      // Function to create buttons and add them to the calculator
+      function createButtons() {
+        for (const value of buttonValues) {
+          const button = document.createElement('button');
+          button.style.cssText =
+            'border-radius: 5px; margin: 5px; font-size: 24px; height: 70px; width: 70px;';
+          button.textContent = value;
+          button.addEventListener('click', () => handleButtonClick(value));
+          buttons.appendChild(button);
+        }
+      }
+
+      // Function to handle button clicks
+      function handleButtonClick(value) {
+        if (value === '=') {
+          calculate();
+        } else if (value === 'C') {
+          clear();
+        } else {
+          display.textContent += value;
+        }
+      }
+
+      // Function to perform calculations
+      function calculate() {
+        try {
+          const result = eval(display.textContent);
+          display.textContent = result;
+        } catch (error) {
+          display.textContent = 'Error';
+        }
+      }
+
+      // Function to clear the display
+      function clear() {
+        display.textContent = '';
+      }
+
+      // Create buttons
+      createButtons();
+    </script>
+  </body>
+</html>
